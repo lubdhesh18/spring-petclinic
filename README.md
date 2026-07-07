@@ -32,7 +32,7 @@ You can then access the Petclinic at <http://localhost:8080/>.
 Or you can run it from Maven directly using the Spring Boot Maven plugin. If you do this, it will pick up changes that you make in the project immediately (changes to Java source files require a compile as well - most people use an IDE for this):
 
 ```bash
-./mvnw spring-boot:run
+./mvnw spring-boot: run
 ```
 
 > NOTE: If you prefer to use Gradle, you can build the app using `./gradlew build` and look for the jar file in `build/libs`.
@@ -51,7 +51,7 @@ Our issue tracker is available [here](https://github.com/spring-projects/spring-
 
 ## Database configuration
 
-In its default configuration, Petclinic uses an in-memory database (H2) which
+In its default configuration, Petclinic uses an in-memory database (H2), which
 gets populated at startup with data. The h2 console is exposed at `http://localhost:8080/h2-console`,
 and it is possible to inspect the content of the database using the `jdbc:h2:mem:<uuid>` URL. The UUID is printed at startup to the console.
 
@@ -72,7 +72,7 @@ docker run -e POSTGRES_USER=petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES
 Further documentation is provided for [MySQL](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources/db/mysql/petclinic_db_setup_mysql.txt)
 and [PostgreSQL](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources/db/postgres/petclinic_db_setup_postgres.txt).
 
-Instead of vanilla `docker` you can also use the provided `docker-compose.yml` file to start the database containers. Each one has a service named after the Spring profile:
+Instead of vanilla `docker,` you can also use the provided `docker-compose.yml` file to start the database containers. Each one has a service named after the Spring profile:
 
 ```bash
 docker compose up mysql
@@ -86,11 +86,11 @@ docker compose up postgres
 
 ## Test Applications
 
-At development time we recommend you use the test applications set up as `main()` methods in `PetClinicIntegrationTests` (using the default H2 database and also adding Spring Boot Devtools), `MySqlTestApplication` and `PostgresIntegrationTests`. These are set up so that you can run the apps in your IDE to get fast feedback and also run the same classes as integration tests against the respective database. The MySql integration tests use Testcontainers to start the database in a Docker container, and the Postgres tests use Docker Compose to do the same thing.
+At development time, we recommend you use the test applications set up as `main()` methods in `PetClinicIntegrationTests` (using the default H2 database and also adding Spring Boot Devtools), `MySqlTestApplication,` and `PostgresIntegrationTests`. These are set up so that you can run the apps in your IDE to get fast feedback and also run the same classes as integration tests against the respective database. The MySQL integration tests use Testcontainers to start the database in a Docker container, and the Postgres tests use Docker Compose to do the same thing.
 
 ## Compiling the CSS
 
-There is a `petclinic.css` in `src/main/resources/static/resources/css`. It was generated from the `petclinic.scss` source, combined with the [Bootstrap](https://getbootstrap.com/) library. If you make changes to the `scss`, or upgrade Bootstrap, you will need to re-compile the CSS resources using the Maven profile "css", i.e. `./mvnw package -P css`. There is no build profile for Gradle to compile the CSS.
+There is a `petclinic.css` in `src/main/resources/static/resources/css`. It was generated from the `petclinic.scss` source, combined with the [Bootstrap](https://getbootstrap.com/) library. If you make changes to the `scss`, or upgrade Bootstrap, you will need to re-compile the CSS resources using the Maven profile "css", i.e., `./mvnw package -P css`. There is no build profile for Gradle to compile the CSS.
 
 ## Working with Petclinic in your IDE
 
@@ -125,7 +125,7 @@ The following items should be installed in your system:
 
     In the main menu, choose `File -> Open` and select the Petclinic [pom.xml](pom.xml). Click on the `Open` button.
 
-    - CSS files are generated from the Maven build. You can build them on the command line `./mvnw generate-resources` or right-click on the `spring-petclinic` project then `Maven -> Generates sources and Update Folders`.
+    - CSS files are generated from the Maven build. You can build them on the command line `./mvnw generate-resources` or right-click on the `spring-petclinic` project, then `Maven -> Generate Sources and Update Folders`.
 
     - A run configuration named `PetClinicApplication` should have been created for you if you're using a recent Ultimate version. Otherwise, run the application by right-clicking on the `PetClinicApplication` main class and choosing `Run 'PetClinicApplication'`.
 
@@ -150,7 +150,7 @@ GitHub org is the "canonical" implementation based on Spring Boot and Thymeleaf.
 
 ## Interaction with other open-source projects
 
-One of the best parts about working on the Spring Petclinic application is that we have the opportunity to work in direct contact with many Open Source projects. We found bugs/suggested improvements on various topics such as Spring, Spring Data, Bean Validation and even Eclipse! In many cases, they've been fixed/implemented in just a few days.
+One of the best parts about working on the Spring Petclinic application is that we have the opportunity to work in direct contact with many open-source projects. We found bugs/suggested improvements on various topics such as Spring, Spring Data, Bean Validation, and even Eclipse! In many cases, they've been fixed/implemented in just a few days.
 Here is a list of them:
 
 | Name | Issue |
